@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+      p{
+    font-family: 'Poppins', sans-serif;
+}
+h1,h2,h3{
+    font-family: 'Poppins', sans-serif;
+     font-size: 2.2rem;
+     
+}
+
+.navbar
+{
+   background: linear-gradient(135deg, #0d1b2a 0%, #0a1628 60%, #0a1628 100%);
+}
+ .about-section { background: #fff; }
+      .about-text {
+        font-size: 1rem;
+        line-height: 2;
+        color: #4a5568;
+        max-width: 720px;
+        margin: 0 auto 36px;
+        text-align: center;
+      }
+ 
+      .social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px; height: 48px;
+        border-radius: 50%;
+        background: #f0f4ff;
+        color: #0d1b2a;
+        font-size: 1.3rem;
+        margin: 0 8px;
+        transition: background var(--transition), transform 0.2s, box-shadow 0.3s;
+        text-decoration: none;
+      }
+      .social-link:hover {
+        background: linear-gradient(135deg, var(--blue), var(--cyan));
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.842);
+      }
+      .resume-section {
+        padding: 60px 20px;
+      }
+
+      .resume-card {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.736) 0%, rgba(0, 0, 0, 0.878) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+
+      .resume-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 16px 48px rgba(13, 110, 253, 0.2);
+        
+      }
+
+      .resume-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 20px;
+      }
+
+      .resume-text {
+        color: #d0d5e0;
+        font-size: 1.05rem;
+        line-height: 1.8;
+        margin-bottom: 30px;
+      }
+
+      .download-btn {
+        background: linear-gradient(135deg, #0d6efd 0%, #0dcaf0 100%);
+        border: none;
+        padding: 12px 32px;
+        font-weight: 600;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .download-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 24px rgba(13, 110, 253, 0.3);
+      }
+
+      #hero{
+        background: linear-gradient(135deg, #0d1b2a 0%, #0a1628 60%, #0d2040 100%);
+        min-height: 92vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-btns { animation: fadeSlideUp 1.1s 0.45s ease both; }
+      .btn-primary-custom {
+        background:rgb(7, 93, 169);
+        border: none;
+        color: #fff;
+        padding: 12px 28px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: box-shadow var(--transition), transform 0.2s;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .btn-primary-custom:hover {
+        box-shadow: 0 8px 30px rgba(27,79,255,0.45);
+        transform: translateY(-2px);
+        color: #fff;
+      }
+      .btn-outline-custom {
+        background: transparent;
+        border: 2px solid rgba(7, 29, 140, 0.897);
+        color: #fff;
+        padding: 11px 28px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: border-color 0.3s, background 0.3s;
+        text-decoration: none;
+        display: inline-block;
+        margin-left: 12px;
+      }
+      .btn-outline-custom:hover {
+        border-color: var(--cyan);
+        background: rgba(0,200,255,0.08);
+        color: #fff;
+      }
+      .card:hover{
+        transform:translateY(-3px);
+      }
+      
+ 
+    </style>
+
+    <title>personal portfolio</title>
+  </head>
+  <body>
+    <!-- navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark  px-5">
+      <div class="container-fluid">
+        <a class="navbar-brand h2" href="#">Portfolio</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse mx-5" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item mx-3 h6">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item mx-3 h6">
+              <a class="nav-link" href="#resume">Resume</a>
+            </li>
+            <li class="nav-item mx-3 h6">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item mx-3 h6">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- herosection -->
+
+    <section class="container-fluid py-5 " id="hero">
+      <div
+        class="container d-md-flex justify-content-center align-items-center gap-5 my-3 text-center text-md-start"
+      >
+        <div class="container">
+          <h1 class="display-6 fw-bold text-start text-light fst-italic">
+            I'm ASHOK GORTIPATI
+          </h1>
+          <p class="about text-light lh-base h6">
+            Hi, I'm Ashok Gortipati, a passionate Computer Science and
+            Engineering student. I have a strong interest in
+            <span>Web Development</span>, <span>Programming</span>, and
+            <span>Problem Solving</span>. I enjoy building responsive and
+            user-friendly websites while continuously improving my coding skills
+            through practice and real-world projects.
+          </p>
+           <div class="hero-btns d-flex flex-wrap gap-3 py-3" >
+              <a href="#projects" class="btn-primary-custom">View Projects <i class="bi bi-arrow-right ms-1"></i></a>
+              <a href="#contact" class="btn-outline-custom">Hire Me</a>
+            </div>
+        </div>
+        <div class="container">
+          <img
+            src="/ChatGPT Image Jun 17, 2026, 12_37_57 PM.png"
+            class="img-fluid w-60 rounded-circle shadow"
+          />
+        </div>
+      </div>
+      
+      
+    </section>
+
+    <!-- about -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="section-line reveal my-5"></div>
+        <h2 class="section-title reveal text-center">About Me</h2>
+        <p class="section-subtitle reveal text-center">Who I am & what drives me</p>
+ 
+        <p class="about-text reveal ">
+          Hi, I'm <strong>Ashok Gortipati</strong>, a passionate Computer Science and Engineering
+          student with a strong interest in Web Development, Programming, and Problem Solving.
+          I enjoy building responsive and user-friendly websites while continuously improving
+          my coding skills through practice and real-world projects.
+          I have solved <strong>1000+ coding problems</strong> on CodeChef, which has strengthened
+          my understanding of data structures, algorithms, and logical thinking.
+          My goal is to become a skilled software engineer and contribute to innovative projects
+          that create meaningful impact.
+        </p>
+ 
+        <div class="text-center reveal my-5">
+          <a href="#" class="social-link" title="GitHub"><i class="bi bi-github"></i></a>
+          <a href="#" class="social-link" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="social-link" title="Email"><i class="bi bi-envelope-fill"></i></a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- skills -->
+
+        <section class="container">
+       <h2 class="text-center mb-4 my-5 ">Skills</h2><hr class="w-25 mx-auto" />
+       <div class="d-flex flex-wrap justify-content-center gap-5">
+     <div class="card" style="width: 10rem; height: 10rem;">
+  <img src="/Top 5 High-demand Front-end Programming Languages in Web Development World.jfif" alt="...">
+  <div class="card-body">
+    
+  </div>
+</div>
+<div class="card" style="width: 10rem; height: 10rem;">
+  <img src="/js.jpg" class=" img-fluid" alt="...">
+  <div class="card-body">
+   
+    
+  </div>
+</div>
+<div class="card" style="width: 10rem; height: 10rem;">
+  <img src="/Bootstrap and Bulma _ CSS frameworks for easy development of web interfaces.jfif" class="img-fluid" alt="...">
+  <div class="card-body">
+    
+    
+  </div>
+</div>
+<div class="card" style="width: 10rem; height: 10rem;">
+  <img src="/css.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+   
+  </div>
+</div>
+
+       </div>
+     </section>
+
+    <!-- resume -->
+
+    <section class="resume-section" id="resume">
+      <div class="container py-5">
+        <h2 class="resume-title text-center">Resume</h2>
+        <hr class="w-25 mx-auto mb-5" />
+
+        <div class="d-flex justify-content-center">
+          <div class="resume-card card-body text-center py-5" style="width: 100%; height: 250px; max-width: 700px;">
+            <p class="resume-text">Download my resume to learn more about my education, technical skills, projects, and achievements.</p>
+            <a href="/Ashok Gortipati (2).pdf"
+               class="btn download-btn text-white"
+               download>
+              <i class="bi bi-download me-2"></i>Download Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- projects -->
+ <section class="container" id="projects">
+      <h1 class="text-center">Projects</h1><hr class="w-25 mx-auto" />
+      <div class="d-md-flex gap-5 justify-content-center align-itens-center  my-1">
+        <div class="card text-center mx-auto mx-md-0 my-5" style="width: 18rem;">
+  <img src="https://images.openai.com/static-rsc-4/MM0FMhchwwHOGYl8srteWq1YvsrkOupJK9FOY6pWNDQkOYA-0-0VGXElRP2tPlG6jnc1uElF7rsefZ0H67KHgK4KZBcJgdjN14IIHMj60Z7YxQIqyeLf93GTeR8REHs6ONm61rdgY30hKWAK7Moy5E5TzHY0-ZTWojbyuMjOdvsQLqbWzAOcixM2dtEJ6bnn?purpose=fullsize" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Responsive Login Page</h5>
+    <p class="card-text">Developed a modern and responsive login page using HTML, CSS, and Bootstrap.</p>
+    <a href="https://github.com/ashokgortipati"
+   target="_blank"
+   class="btn btn-primary">
+   View Project
+</a>
+  </div>
+</div>
+<div class="card text-center mx-auto mx-md-0 my-5" style="width: 18rem;">
+  <img src="https://images.openai.com/static-rsc-4/i3niYZAXKF5ohdxtV5acd43KgnFlqsNiq5RcLNhhC6TFucRC4uu7VpOv3ljhoGiNgpxdTCpvvM5xQl6IoPIUDOu6H54Sp6fHqy3Q4IZsTsaFD6eKV469HbJza1rqzMkAgjT-EwaBOqwXJo46Xf_E_PjI0uoWaiy4bOASNY_EUCRronzrKYXWlpvJ8vPEFY-X?purpose=fullsize" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Product Landing Page</h5>
+    <p class="card-text">Created a visually appealing product landing page designed to showcase products effectively.</p>
+    <a href="https://github.com/ashokgortipati"
+   target="_blank"
+   class="btn btn-primary">
+   View Project
+</a>
+  </div>
+</div>
+<div class="card text-center mx-auto mx-md-0 my-5" style="width: 18rem;">
+  <img src="https://images.openai.com/static-rsc-4/6S8PeHhrBoon38zdG23oS77HgHXYrid5lUooPIuY9fqMRyV4WVTKwCY6VRcAYJePEw2bYEaQW9BMMeZXuAuqXHrsV6Qxqf0hNc21y1BLMmx1uC7rGKUhsYFCxOOkPn-A9nBWEP9H6Zd8GKJZzKrcI0_fMFwVLE6B_ZltSHyiK7CDFYgbIr4amm9AHhS2GnWx?purpose=fullsize" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Personal Portfolio Website</h5>
+    <p class="card-text">Designed and developed a personal portfolio website to showcase my skills, projects, and achievements.</p>
+    <a href="https://github.com/ashokgortipati"
+   target="_blank"
+   class="btn btn-primary">
+   View Project
+</a>
+  </div>
+</div>
+      </div>
+      
+    </section>
+<!-- contact  -->
+<section id="contact" class="container py-5">
+    <h2 class="text-center mb-4">Contact Me</h2>
+    <hr class="w-25 mx-auto">
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+
+            <div class="card shadow p-4">
+
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Enter your name"
+                            required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email Address</label>
+                        <input
+                            type="email"
+                            class="form-control"
+                            placeholder="Enter your email"
+                            required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Subject</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Enter subject">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Message</label>
+                        <textarea
+                            class="form-control"
+                            rows="5"
+                            placeholder="Write your message..."
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="bi bi-send-fill me-2"></i>
+                        Send Message
+                    </button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    </section>
+
+
+    <!-- footer  -->
+
+    <footer class="bg-dark text-white text-center py-4 my-auto mt-5">
+    <p class="mb-0">
+        © 2026 Ashok Gortipati. All Rights Reserved.
+    </p>
+</footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
